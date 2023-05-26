@@ -3,3 +3,5 @@ global close
 close:
     mov rax, 3
     syscall
+
+    ret

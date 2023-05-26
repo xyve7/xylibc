@@ -2,12 +2,9 @@
 #include <stdio.h>
 
 int main(void) {
-	// int fd = open("/run/media/xyve/Data/Programming/xylibc/src/bs.txt", O_RDONLY, 0666);
-	// char buffer[13] = {0};
-	// read(fd, buffer, 12);
-	// puts(buffer);
-	// close(fd);
-	return write(1, "Hello", 5);
+	int fd = open("src/bs.txt", O_RDWR, 0666);
+	write(fd, "Hello World!", 12);
+	close(fd);
 }
 
 void _start(void) {

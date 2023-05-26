@@ -54,6 +54,6 @@
 #define O_NDELAY        O_NONBLOCK
 #endif
 
-extern int open(const char *path, int flags, mode_t mode);
+extern int open(const char* path, int flags, mode_t mode);
 
 #endif
