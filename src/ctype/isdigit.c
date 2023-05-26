@@ -1,5 +1,4 @@
-#include "../include/ctype.h"
-
+#include <ctype.h>
 int isdigit(int c)
 {
     return (c > 47 && c < 58) ? 0 : 1;

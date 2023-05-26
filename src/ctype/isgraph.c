@@ -1,5 +1,4 @@
-#include "../include/ctype.h"
-
+#include <ctype.h>
 int isgraph(int c)
 {
     return (c > 32 && c != 127) ? 0 : 1;

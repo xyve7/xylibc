@@ -1,5 +1,7 @@
 #include <stdio.h>
 
 int puts(const char *str) {
-    return fputs(str, stdout);
+    int ret = fputs(str, stdout);
+    ret = fputc('\n', stdout);
+    return ret;
 }
