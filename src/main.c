@@ -2,9 +2,7 @@
 #include <stdio.h>
 
 int main(void) {
-	int fd = open("src/bs.txt", O_RDWR, 0666);
-	write(fd, "Hello World!", 12);
-	close(fd);
+    fprintf("%d\n", 125);
 }
 
 void _start(void) {

@@ -1,8 +1,8 @@
 CC = clang
-CFLAGS = -g -fno-stack-protector -O2 -Wall -Wextra -Werror -std=c11 -Isrc/include -nostdlib 
+CFLAGS = -g -fno-stack-protector -Wall -Wextra -Werror -std=c11 -Isrc/include -nostdlib 
 OUT = libctest
-CFILES = $(shell find . -type f -name '*.c')
-ASMFILES = $(shell find . -type f -name '*.asm')
+CFILES = $(shell find src -type f -name '*.c')
+ASMFILES = $(shell find src -type f -name '*.asm')
 COBJECTS = $(CFILES:.c=.o)
 ASMOBJECTS = $(ASMFILES:.asm=.o)
 

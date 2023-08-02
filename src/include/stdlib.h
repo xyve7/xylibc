@@ -23,6 +23,8 @@ ldiv_t ldiv(long numer, long denom);
 int abs(int val);
 long labs(long val);
 
+int atoi(const char* str);
+
 #ifdef __cplusplus
 }
 #endif
