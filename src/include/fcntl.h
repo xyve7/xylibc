@@ -2,6 +2,7 @@
 #define FCNTL_H
 
 #include <sys/types.h>
+#include <syscall.h>
 
 /* Temporary */
 #define O_ACCMODE        00000003
@@ -54,6 +55,7 @@
 #define O_NDELAY        O_NONBLOCK
 #endif
 
-extern int open(const char* path, int flags, mode_t mode);
+int open(const char* path, int flags, mode_t mode);
+
 
 #endif

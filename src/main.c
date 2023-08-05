@@ -2,9 +2,8 @@
 #include <stdio.h>
 
 int main(void) {
-    fprintf("%d\n", 125);
+	write(1, "HI", 2);
 }
-
 void _start(void) {
 	_exit(main());	
 }

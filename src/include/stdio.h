@@ -54,6 +54,8 @@ int printf(const char *restrict format, ...);
 int vprintf(const char *restrict format, va_list args);
 int vfprintf(FILE* restrict stream, const char *restrict format, va_list args);
 
+int rename(const char *old, const char *new);
+
 #ifdef __cplusplus
 }
 #endif
