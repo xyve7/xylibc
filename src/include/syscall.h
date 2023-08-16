@@ -364,7 +364,7 @@
 #define SYS_futex_waitv 449
 #define SYS_set_mempolicy_home_node 450
 
-extern long syscall(long num, ...);
-extern long syscall_no_ret(long num, ...);
+extern long syscall(long number, ...);
+extern long syscall_no_ret(long number, ...);
 
 #endif
