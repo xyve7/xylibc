@@ -1,9 +1,5 @@
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
-int main(void) {
-	write(1, "HI", 2);
-}
-void _start(void) {
-	_exit(main());	
-}
+int main(void) { printf("Hello World!\n"); }
+void _start(void) { _exit(main()); }

@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 #include <syscall.h>
+#include <stdint.h>
 
 ssize_t read(int fd, void *buf, size_t nbyte);
 ssize_t write(int fd, const void *buf, size_t nbyte);
@@ -18,5 +19,8 @@ int link(const char *old_path, const char *new_path);
 int unlink(const char *path);
 int symlink(const char *target, const char *link_path);
 ssize_t readlink(const char *restrict path, char *restrict buf, size_t bufsize);
+
+int brk(void* address);
+void* sbrk(intptr_t increment);
 
 #endif
