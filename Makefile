@@ -1,15 +1,23 @@
 CC = clang
-CFLAGS = -g -fno-stack-protector -Wall -Wextra -Werror -std=c11 -Isrc/include -nostdlib 
+CFLAGS = -fno-stack-protector -Wall -Wextra -Werror -std=c11 -Isrc/include -nostdlib
 OUT = libctest
 CFILES = $(shell find src -type f -name '*.c')
 ASMFILES = $(shell find src -type f -name '*.asm')
-COBJECTS = $(CFILES:.c=.o)
-ASMOBJECTS = $(ASMFILES:.asm=.o)
+COBJS = $(CFILES:.c=.o)
+ASMOBJS = $(ASMFILES:.asm=.o)
 
-.PHONY all: $(OUT)
+.PHONY: all release debug clean
 
-$(OUT): $(COBJECTS) $(ASMOBJECTS)
-	$(CC) $(CFLAGS) $(COBJECTS) $(ASMOBJECTS) -o $(OUT) 
+all: debug
+
+release: CFLAGS += -O2
+release: $(OUT)
+
+debug: CFLAGS += -g 
+debug: $(OUT)
+
+$(OUT): $(COBJS) $(ASMOBJS)
+	$(CC) $(CFLAGS) $(COBJS) $(ASMOBJS) -o $(OUT) 
 	
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -18,4 +26,4 @@ $(OUT): $(COBJECTS) $(ASMOBJECTS)
 	nasm -f elf64 $< -o $@
 
 clean:
-	rm -f $(COBJECTS) $(ASMOBJECTS) $(OUT)
+	rm -f $(COBJS) $(ASMOBJS) $(OUT)
